@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Air_Quality", "Air_Quality\Air_Quality.csproj", "{3FEB7C7B-5B6E-4C0C-B9C6-D96E898730F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FEB7C7B-5B6E-4C0C-B9C6-D96E898730F5}.Debug|x86.ActiveCfg = Debug|x86
+		{3FEB7C7B-5B6E-4C0C-B9C6-D96E898730F5}.Debug|x86.Build.0 = Debug|x86
+		{3FEB7C7B-5B6E-4C0C-B9C6-D96E898730F5}.Release|x86.ActiveCfg = Release|x86
+		{3FEB7C7B-5B6E-4C0C-B9C6-D96E898730F5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
