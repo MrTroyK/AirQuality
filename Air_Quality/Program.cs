@@ -17,16 +17,30 @@ namespace AirQuality
 
             ip = GetMyIP();
             pos = GetLocalizeIP(ip);
-            Console.WriteLine($"{ip}:\n{pos}\n");
+            //Console.WriteLine($"{ip}:\n{pos}\n");
 
             dynamic loc = JsonConvert.DeserializeObject<dynamic>(pos);
 
-            Console.WriteLine($"{ip} at {loc.city}/{loc.country} :\n${air_quality}");
+            lat = loc.lat;
+            lon = loc.lon;
+            air_quality = GetAirQuality(lat, lon);
+
+            dynamic quality = JsonConvert.DeserializeObject<dynamic>(air_quality);
+
+            Console.WriteLine($"{ip} at {loc.city}/{loc.country} :\n{quality.country_description} {quality.dominant_polluant_description}");
         }
 
         static string GetAirQuality(string lat, string lon)
         {
-            WebClient
+            WebClient webclient;
+            string res, url;
+
+            webclient = new WebClient();
+            url = $"https://api.breezometer.com/baqi/?lat={lat}&lon={lon}&key=3e3ca9627cd24faf8626cead119876ed";
+            res = webclient.DownloadString(url);
+            res = res.Trim();
+
+            return res;
         }
 
 
