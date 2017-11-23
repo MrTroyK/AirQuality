@@ -12,7 +12,7 @@ namespace AirQuality
     {
         public static void Main(string[] args)
         {
-            String ip, pos;
+            String ip, pos, air_quality, lat, lon;
 
             ip = GetMyIP();
             pos = GetLocalizeIP(ip);
@@ -20,10 +20,12 @@ namespace AirQuality
 
             dynamic loc = JsonConvert.DeserializeObject<dynamic>(pos);
 
-            Console.WriteLine($"City\t    : {loc.city}");
-            Console.WriteLine($"Country \t: {loc.country}");
-            Console.WriteLine($"ISP\t     : {loc.isp}");
-            Console.WriteLine($"GPS\t     : ({loc.lat}, {loc.lon})");
+            Console.WriteLine($"{ip} at {loc.city}/{loc.country} :\n${air_quality}");
+        }
+
+        static string GetAirQuality(string lat, string lon)
+        {
+            WebClient
         }
 
 
