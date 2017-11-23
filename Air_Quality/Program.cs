@@ -10,6 +10,7 @@ namespace AirQuality
 {
     class MainClass
     {
+        
         public static void Main(string[] args)
         {
             String ip, pos, air_quality, lat, lon;
